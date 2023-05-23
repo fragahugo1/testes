@@ -18,6 +18,8 @@ void setup() {
   pinMode(motor_direitoB, OUTPUT);
 
   while(digitalRead(microstart == 0));
+
+  int primeiroMovimento =1;
 }
 
 void loop() {
