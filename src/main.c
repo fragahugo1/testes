@@ -28,7 +28,7 @@ void loop() {
     //os sensores de borda tem logica invertida
 
     if(digitalRead(sensor_borda_esquerdo) && digitalRead(sensor_borda_direito)){
-      if(primeiroMovimento = 1)
+      if(primeiroMovimento == 1)
         Frente();
 
       else{
