@@ -49,7 +49,7 @@ void setup() {
   pinMode(motor_direitoA, OUTPUT);
   pinMode(motor_direitoB, OUTPUT);
 
-  while(digitalRead(microstart == 0));
+  while(!digitalRead(microstart == 0)); //caso n funcione: botar no loop
 
   int primeiroMovimento =1;
 }

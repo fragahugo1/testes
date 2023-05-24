@@ -49,14 +49,14 @@ void setup() {
   pinMode(motor_direitoA, OUTPUT);
   pinMode(motor_direitoB, OUTPUT);
 
-  while(digitalRead(microstart == 0));
+  while(!digitalRead(microstart == 0)); //caso n funcione: botar no loop
 
   int primeiroMovimento =1;
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  while(digitalRead(microstart)){
+  if(digitalRead(microstart)){
     //os sensores de borda tem logica invertida
 
     if(digitalRead(sensor_borda_esquerdo) && digitalRead(sensor_borda_direito)){
