@@ -85,6 +85,8 @@ void loop() {
       BordaDireita();
     }
   }
+  else 
+    Parar();
 }
 
 // put function definitions here:
@@ -155,7 +157,6 @@ void BordaDireita(){
     Frente();
 }
 
-/*
 void Parar(){
   digitalWrite(motor_esquerdoA, LOW);
   digitalWrite(motor_esquerdoB, LOW);
@@ -164,4 +165,3 @@ void Parar(){
   analogWrite(pwm_esquerdo, 0);
   analogWrite(pwm_direito, 0);
 }
-*/
