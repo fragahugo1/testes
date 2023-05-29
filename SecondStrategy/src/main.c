@@ -96,8 +96,8 @@ void Frente(){
     digitalWrite(motor_direitoA, HIGH);
     digitalWrite(motor_direitoB, LOW);
 
-    analogWrite(pwm_esquerdo, 100);
-    analogWrite(pwm_direito, 104);
+    analogWrite(pwm_esquerdo, 96);
+    analogWrite(pwm_direito, 100);
 }
 
 void FullFrente(){
@@ -117,8 +117,8 @@ void Tras(){
     digitalWrite(motor_direitoA, LOW);
     digitalWrite(motor_direitoB, HIGH);
 
-    analogWrite(pwm_esquerdo, 130);
-    analogWrite(pwm_direito, 134);
+    analogWrite(pwm_esquerdo, 126);
+    analogWrite(pwm_direito, 130);
 }
 
 void Esquerda(){
@@ -127,8 +127,8 @@ void Esquerda(){
     digitalWrite(motor_direitoA, HIGH);
     digitalWrite(motor_direitoB, LOW);
 
-    analogWrite(pwm_esquerdo, 110);
-    analogWrite(pwm_direito, 114);
+    analogWrite(pwm_esquerdo, 96);
+    analogWrite(pwm_direito, 100);
 }
 
 void Direita(){
@@ -137,8 +137,8 @@ void Direita(){
     digitalWrite(motor_direitoA, LOW);
     digitalWrite(motor_direitoB, HIGH);
 
-    analogWrite(pwm_esquerdo, 110);
-    analogWrite(pwm_direito, 114);
+    analogWrite(pwm_esquerdo, 96);
+    analogWrite(pwm_direito, 100);
 }
 
 void BordaEsquerda(){
