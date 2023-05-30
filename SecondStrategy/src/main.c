@@ -30,8 +30,6 @@ void Direita();
 void BordaEsquerda();
 void BordaDireita();
 
-int primeiroMovimento = 1;
-
 void setup() {
   // put your setup code here, to run once:
   pinMode(sensor_frontal, INPUT);
@@ -50,8 +48,6 @@ void setup() {
   pinMode(motor_direitoB, OUTPUT);
 
   while(!digitalRead(microstart == 0)); //caso n funcione: botar no loop
-
-  int primeiroMovimento =1;
 }
 
 void loop() {
@@ -60,31 +56,23 @@ void loop() {
     //os sensores de borda tem logica invertida
     
     if(digitalRead(sensor_borda_esquerdo) && digitalRead(sensor_borda_direito)){
-      if(primeiroMovimento == 1)
+      if(digitalRead(sensor_frontal))
+        FullFrente();
+      else if(digitalRead(sensor_esquerdo) && !digitalRead(sensor_direito))
+        Esquerda();
+      else if(digitalRead(sensor_direito) && !digitalRead(sensor_esquerdo))
+        Direita();
+      else
         Frente();
-      
-      else{
-        if(digitalRead(sensor_frontal))
-          FullFrente();
-        else if(digitalRead(sensor_esquerdo))
-          Esquerda();
-        else if(digitalRead(sensor_direito))
-          Direita();
-        else
-          Frente();
-      }
     }
 
-    else if(!digitalRead(sensor_borda_esquerdo)){
-      primeiroMovimento = 0;
+    else if(!digitalRead(sensor_borda_esquerdo) && digitalRead(sensor_borda_direito))
       BordaEsquerda();
-    }
 
-    else if(!digitalRead(sensor_borda_direito)){
-      primeiroMovimento = 0;
+    else if(!digitalRead(sensor_borda_direito) && digitalRead(sensor_borda_esquerdo))
       BordaDireita();
-    }
   }
+
   else 
     Parar();
 }

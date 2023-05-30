@@ -66,31 +66,31 @@ void loop() {
       else{
         if(digitalRead(sensor_frontal))
           FullFrente(); 
-        else if(digitalRead(sensor_esquerdo))
+        else if(digitalRead(sensor_esquerdo) && !digitalRead(sensor_direito))
           Esquerda();
-        else if(digitalRead(sensor_direito))
+        else if(digitalRead(sensor_direito) && !digitalRead(sensor_esquerdo))
           Direita();
         else 
           Frente();
       }
     }
 
-    else if(!digitalRead(sensor_borda_esquerdo)){
+    else if(!digitalRead(sensor_borda_esquerdo) && digitalRead(sensor_borda_direito)){
       if(primeiroMovimento == 1){
-        BordaEsquerda(900);
+        BordaEsquerda(400);
         primeiroMovimento = 0;
       }
       else
-        BordaEsquerda(1200);
+        BordaEsquerda(700);
     }
 
-    else if(!digitalRead(sensor_borda_direito)){
+    else if(!digitalRead(sensor_borda_direito) && digitalRead(sensor_borda_esquerdo)){
       if(primeiroMovimento == 1){
-        BordaDireita(900);
+        BordaDireita(400);
         primeiroMovimento = 0;
       }
       else
-        BordaDireita(1200);
+        BordaDireita(700);
     }
   }
   else 
